@@ -448,10 +448,41 @@ video {
 /* RSVP */
 .rsvp {
   background: #f8f6f0;
-  padding: 55px 24px;
+  padding: 80px 24px 60px; /* atas lebih besar */
   text-align: center;
+
+  display: grid;
+  gap: 24px; /* jarak antar elemen */
 }
 
+/* JARAK DARI SECTION SEBELUMNYA */
+.rsvp {
+  margin-top: 40px;
+}
+
+/* JUDUL */
+.rsvp h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 34px;
+  color: #8a5a2b;
+  margin-bottom: 10px;
+}
+
+/* PARAGRAF */
+.rsvp p {
+  max-width: 420px;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* BUTTON */
+.rsvp .btn {
+  margin-top: 10px;
+  padding: 16px 28px;
+  border-radius: 40px;
+  font-size: 16px;
 /* CLOSING */
 .closing {
   background: #171717;
