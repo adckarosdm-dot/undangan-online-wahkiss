@@ -4,633 +4,297 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
   background: #090604;
-  color: #3a2a1c;
+  font-family: 'Poppins', sans-serif;
+  color: #2d2118;
   text-align: center;
   overflow-x: hidden;
-}
-
-/* COVER */
-.cover {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.88)),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-}
-
-.cover::before {
-  content: "ᬒᬁ";
-  position: absolute;
-  top: 25px;
-  font-size: 42px;
-  color: #d4af68;
-  opacity: 0.85;
-}
-
-.cover-content {
-  padding: 35px 25px;
-  animation: fadeIn 1.8s ease;
-}
-
-.top-title {
-  font-family: 'Cinzel', serif;
-  color: #d4af68;
-  letter-spacing: 5px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.cover h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 90px;
-  margin: 18px 0;
-  color: #ffe1a3;
-  text-shadow: 0 10px 35px rgba(0,0,0,0.9);
-}
-
-.date {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 4px;
-  color: #f7ead8;
-}
-
-.guest-box {
-  margin: 32px auto;
-  padding: 22px;
-  max-width: 330px;
-  border: 1px solid rgba(212,175,104,0.65);
-  border-radius: 22px;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
-}
-
-.guest-box h3 {
-  color: #f5d58a;
-}
-
-/* BUTTON */
-button,
-.btn {
-  background: linear-gradient(135deg, #d4af68, #8a5a2b);
-  color: white;
-  border: none;
-  padding: 14px 34px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
-}
-
-button:hover,
-.btn:hover {
-  transform: translateY(-3px);
-  transition: 0.3s;
 }
 
 .hidden {
   display: none;
 }
 
-/* MAIN */
-main {
+/* COVER HP */
+.cover {
+  min-height: 100vh;
   background:
-    linear-gradient(rgba(247,234,216,0.94), rgba(255,248,239,0.96)),
-    url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17");
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.9)),
+    url("cover-bali.jpg");
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-section {
-  padding: 60px 20px;
+.cover-inner {
+  width: 100%;
+  max-width: 360px;
+  padding: 28px 18px;
+  border: 1px solid rgba(212,175,104,0.65);
+  border-radius: 28px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(5px);
 }
 
-/* CARD */
-.card {
-  max-width: 850px;
-  margin: 0 auto 38px;
-  padding: 38px 28px;
-  background: rgba(255,255,255,0.84);
-  border-radius: 32px;
-  border: 1px solid rgba(212,175,104,0.35);
-  box-shadow: 0 20px 55px rgba(0,0,0,0.14);
-  position: relative;
-}
-
-.card::before {
-  content: "✦";
-  display: block;
+.small-title {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: #d4af68;
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 13px;
 }
 
-.card h2,
-.closing h2 {
+.cover h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 58px;
+  color: #ffe1a3;
+  margin: 14px 0;
+  text-shadow: 0 0 25px rgba(212,175,104,0.7);
+}
+
+.date {
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.guest-box {
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,104,0.5);
+  color: white;
+}
+
+.guest-box h3 {
+  color: #f6d48a;
+}
+
+button,
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #e0b96c, #8a5a2b);
+  color: #111;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* SECTION */
+section {
+  padding: 42px 16px;
+}
+
+.cream-section {
+  background:
+    linear-gradient(rgba(255,246,232,0.96), rgba(255,246,232,0.96)),
+    url("paper-texture.jpg");
+  border-top: 2px solid #c59d5f;
+  border-bottom: 2px solid #c59d5f;
+}
+
+.cream-section h2,
+.dark-section h2,
+.countdown-section h2 {
   font-family: 'Cinzel', serif;
   color: #8a5a2b;
-  letter-spacing: 1px;
+  font-size: 22px;
+  margin-bottom: 16px;
 }
 
-.card p {
-  line-height: 1.9;
+.cream-section p {
+  max-width: 340px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.ornament {
+  color: #c59d5f;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* COUPLE */
+.couple-section {
+  background: #f6ead7;
+}
+
+.person {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(197,157,95,0.5);
+  border-radius: 26px;
+  padding: 24px 16px;
+  margin: 0 auto 22px;
+  max-width: 320px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+}
+
+.person img {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #d4af68;
+}
+
+.person h3 {
+  font-family: 'Cinzel', serif;
+  color: #8a5a2b;
+  font-size: 19px;
+}
+
+.person p {
+  line-height: 1.7;
+}
+
+.and {
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px;
+  color: #b88945;
+  margin-bottom: 20px;
+}
+
+/* DARK */
+.dark-section {
+  background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+    url("bg-dark-bali.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #f7ead8;
+  border-top: 1px solid #c59d5f;
+  border-bottom: 1px solid #c59d5f;
+}
+
+.dark-section h2 {
+  color: #d4af68;
+}
+
+.detail-box {
+  border-bottom: 1px solid rgba(212,175,104,0.35);
+  padding: 14px 0;
+}
+
+.detail-box h4 {
+  color: #d4af68;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
 /* COUNTDOWN */
 .countdown-section {
-  background: linear-gradient(135deg, #090604, #24160c);
-  color: #f4d28c;
-}
-
-.countdown-section p {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 3px;
+  background: #f6ead7;
 }
 
 .countdown {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 330px;
+  margin: auto;
 }
 
 .time-box {
-  border: 1px solid #d4af68;
-  border-radius: 18px;
-  padding: 14px 20px;
-  min-width: 85px;
-  background: rgba(255,255,255,0.05);
+  background: #100c08;
+  color: #d4af68;
+  padding: 16px 8px;
+  border-radius: 14px;
+  border: 1px solid #c59d5f;
 }
 
 .time-box strong {
   display: block;
-  font-size: 30px;
-  color: #ffe1a3;
-}
-
-/* COUPLE */
-.couple {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.person {
-  width: 310px;
-  background: rgba(255,255,255,0.9);
-  padding: 32px 22px;
-  border-radius: 32px;
-  border: 1px solid rgba(212,175,104,0.45);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.13);
-}
-
-.person img {
-  width: 165px;
-  height: 165px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid #d4af68;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.28);
-}
-
-.person h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 52px;
-  color: #8a5a2b;
-  margin-bottom: 5px;
-}
-
-.ampersand {
-  font-family: 'Great Vibes', cursive;
-  font-size: 82px;
-  color: #b88945;
-}
-
-/* DARK EVENT */
-.dark {
-  background:
-    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-.dark h2 {
-  color: #f4d28c;
-}
-
-.dark p {
-  color: #fff8ef;
-}
-
-/* DOA */
-.doa {
-  background: linear-gradient(135deg, #fff8ef, #f7ead8);
-}
-
-.doa p:first-of-type {
-  font-weight: bold;
-  color: #8a5a2b;
+  font-size: 28px;
 }
 
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 28px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 360px;
+  margin: auto;
 }
 
 .gallery img {
   width: 100%;
-  height: 230px;
+  height: 145px;
   object-fit: cover;
-  border-radius: 22px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border-radius: 12px;
+  border: 1px solid #c59d5f;
 }
 
 video {
   width: 100%;
-  max-width: 720px;
-  border-radius: 24px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+  max-width: 360px;
+  border-radius: 16px;
+  border: 1px solid #c59d5f;
 }
 
 /* CLOSING */
 .closing {
-  padding-bottom: 95px;
-  color: #3a2a1c;
-}
-
-.closing h3 {
-  font-family: 'Cinzel', serif;
-  color: #8a5a2b;
-}
-
-/* MUSIC BUTTON */
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #d4af68;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  font-size: 20px;
-  z-index: 999;
-  padding: 0;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(1.06);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  section {
-    padding: 48px 14px;
-  }
-
-  .cover h1 {
-    font-size: 56px;
-  }
-
-  .top-title,
-  .date {
-    font-size: 12px;
-  }
-
-  .guest-box {
-    max-width: 92%;
-  }
-
-  .card {
-    padding: 28px 18px;
-    border-radius: 26px;
-  }
-
-  .couple {
-    flex-direction: column;
-  }
-
-  .person {
-    width: 94%;
-  }
-
-  .person img {
-    width: 145px;
-    height: 145px;
-  }
-
-  .ampersand {
-    font-size: 58px;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    height: 270px;
-  }
-
-  .time-box {
-    min-width: 70px;
-    padding: 10px;
-  }
-
-  .time-box strong {
-    font-size: 22px;
-  }
-
-  button,
-  .btn {
-    width: 90%;
-  }
-}
-/* ================= ARTISTIC VISUAL EFFECTS ================= */
-
-/* Efek cahaya emas di background */
-body::before {
-  content: "";
-  position: fixed;
-  top: -120px;
-  left: -120px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(212,175,104,0.35), transparent 70%);
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  bottom: -120px;
-  right: -120px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(212,175,104,0.25), transparent 70%);
-  z-index: -1;
-}
-
-/* Ornamen garis emas */
-.card {
-  overflow: hidden;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(212,175,104,0.35);
-  border-radius: 24px;
-  pointer-events: none;
-}
-
-/* Efek muncul halus */
-.card,
-.person,
-.gallery img,
-video {
-  animation: softReveal 1.2s ease both;
-}
-
-@keyframes softReveal {
-  from {
-    opacity: 0;
-    transform: translateY(35px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Efek cinematic cover */
-.cover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.55) 100%);
-  pointer-events: none;
-}
-
-/* Nama pasangan glow */
-.cover h1 {
-  animation: goldGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes goldGlow {
-  from {
-    text-shadow: 0 0 12px rgba(212,175,104,0.4);
-  }
-  to {
-    text-shadow: 0 0 28px rgba(212,175,104,0.9);
-  }
-}
-
-/* Foto pengantin lebih artistik */
-.person img {
-  filter: sepia(0.15) contrast(1.05);
-  transition: 0.4s ease;
-}
-
-.person img:hover {
-  transform: scale(1.06);
-  filter: sepia(0.25) contrast(1.15);
-}
-
-/* Galeri cinematic */
-.gallery img {
-  transition: 0.4s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.04);
-  filter: brightness(0.85) sepia(0.2);
-}
-
-/* Tombol lebih hidup */
-button,
-.btn {
-  position: relative;
-  overflow: hidden;
-}
-
-button::before,
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -80%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.45),
-    transparent
-  );
-  transform: skewX(-25deg);
-}
-
-button:hover::before,
-.btn:hover::before {
-  left: 120%;
-  transition: 0.8s;
-}
-
-/* Tombol musik berdenyut */
-#musicBtn {
-  animation: pulseMusic 1.8s infinite;
-}
-
-@keyframes pulseMusic {
-  0% {
-    box-shadow: 0 0 0 0 rgba(212,175,104,0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(212,175,104,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(212,175,104,0);
-  }
-}
-/* ===== BALI ARTISTIC COVER ===== */
-
-.bali-cover {
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9)),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.bali-cover::before {
-  content: "";
-  position: absolute;
-  inset: 20px;
-  border: 1px solid rgba(212,175,104,0.55);
-  border-radius: 28px;
-  pointer-events: none;
-}
-
-.bali-cover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at center, transparent 25%, rgba(0,0,0,0.75) 100%);
-  pointer-events: none;
-}
-
-.cover-content {
-  position: relative;
-  z-index: 2;
-  max-width: 420px;
-  padding: 35px 25px;
-  background: rgba(0,0,0,0.28);
-  border: 1px solid rgba(212,175,104,0.45);
-  border-radius: 30px;
-  backdrop-filter: blur(6px);
-}
-
-.ornament-top {
-  position: absolute;
-  top: 38px;
-  z-index: 2;
-  font-size: 46px;
-  color: #d4af68;
-  opacity: 0.9;
-}
-
-.ornament-bottom {
-  position: absolute;
-  bottom: 35px;
-  z-index: 2;
+  background: #090604;
   color: #d4af68;
   font-family: 'Cinzel', serif;
-  font-size: 13px;
   letter-spacing: 2px;
 }
 
-.top-title {
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #d4af68;
-  font-size: 13px;
+/* MUSIC */
+#musicBtn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 999;
 }
 
-.cover h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 76px;
-  color: #ffe3a3;
-  margin: 15px 0;
-  text-shadow: 0 0 28px rgba(212,175,104,0.75);
-}
-
-.divider {
-  color: #d4af68;
-  margin: 12px 0;
-  letter-spacing: 8px;
-}
-
-.date {
-  font-family: 'Cinzel', serif;
-  color: #fff8ef;
-  letter-spacing: 3px;
-}
-
-.guest-box {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(212,175,104,0.45);
-  border-radius: 20px;
-  padding: 18px;
-  margin: 25px auto;
-}
-
-.guest-box h3 {
-  color: #f4d28c;
-}
-
-@media (max-width: 768px) {
-  .cover-content {
-    max-width: 88%;
-    padding: 28px 18px;
-  }
-
+/* TABLET / DESKTOP */
+@media (min-width: 769px) {
   .cover h1 {
-    font-size: 54px;
+    font-size: 86px;
   }
 
-  .ornament-top {
-    font-size: 36px;
+  .cover-inner {
+    max-width: 520px;
   }
 
-  .ornament-bottom {
-    font-size: 11px;
+  .couple-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .and {
+    margin-bottom: 0;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 600px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  video {
+    max-width: 760px;
   }
 }
