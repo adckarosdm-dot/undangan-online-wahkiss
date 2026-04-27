@@ -3,75 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generator Undangan</title>
+  <title>Generator Link Undangan</title>
 
   <style>
     body {
-      font-family: Arial;
-      text-align: center;
+      font-family: Arial, sans-serif;
       background: #111;
       color: white;
-      padding: 50px 20px;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .box {
+      max-width: 450px;
+      margin: auto;
+      background: #1d1d1d;
+      padding: 25px;
+      border-radius: 20px;
     }
 
     input {
-      width: 90%;
-      max-width: 400px;
-      padding: 12px;
+      width: 100%;
+      padding: 14px;
       border-radius: 10px;
       border: none;
-      margin-top: 20px;
+      margin: 15px 0;
+      box-sizing: border-box;
     }
 
-    button {
-      margin-top: 15px;
-      padding: 12px 25px;
-      border-radius: 20px;
+    button, a {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 30px;
       border: none;
-      background: gold;
-      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      box-sizing: border-box;
     }
 
-    #result {
-      margin-top: 25px;
+    .generate {
+      background: #c59d5f;
+    }
+
+    .copy {
+      background: #444;
+    }
+
+    .wa {
+      background: #25D366;
+    }
+
+    .ig {
+      background: #E1306C;
+    }
+
+    #linkText {
+      margin-top: 20px;
       word-break: break-all;
+      font-size: 14px;
+      color: #f5d58a;
     }
   </style>
 </head>
 
 <body>
 
-<h2>Generator Link Undangan</h2>
+  <div class="box">
+    <h2>Daftar Link Undangan</h2>
+    <p>Masukkan nama tamu:</p>
 
-<p>Masukkan nama tamu:</p>
+    <input type="text" id="nama" placeholder="Contoh: Bapak Made & Ibu">
 
-<input type="text" id="nama" placeholder="Contoh: Bapak Made & Ibu">
+    <button class="generate" onclick="buatLink()">Buat Link Undangan</button>
 
-<br>
+    <p id="linkText"></p>
 
-<button onclick="buatLink()">Buat Link</button>
+    <button class="copy" onclick="copyLink()">Copy Link</button>
 
-<div id="result"></div>
+    <a id="waShare" class="wa" href="#" target="_blank">
+      Share ke WhatsApp
+    </a>
 
-<script>
-function buatLink() {
-  let nama = document.getElementById("nama").value;
+    <a id="igShare" class="ig" href="https://www.instagram.com/" target="_blank">
+      Buka Instagram
+    </a>
+  </div>
 
-  if (!nama) {
-    alert("Isi nama dulu");
-    return;
-  }
+  <script>
+    let finalLink = "";
 
-  let encoded = encodeURIComponent(nama);
+    function buatLink() {
+      const nama = document.getElementById("nama").value.trim();
 
-  let link = window.location.origin + "/?to=" + encoded;
+      if (!nama) {
+        alert("Isi nama tamu dulu");
+        return;
+      }
 
-  document.getElementById("result").innerHTML = `
-    <p>Link Undangan:</p>
-    <a href="${link}" target="_blank">${link}</a>
-  `;
-}
-</script>
+      const encodedNama = encodeURIComponent(nama);
+      finalLink = window.location.origin + "/?to=" + encodedNama;
+
+      document.getElementById("linkText").innerText = finalLink;
+
+      const pesanWA =
+        "Halo kak,%0A%0A" +
+        "Berikut link undangan kami:%0A" +
+        finalLink + "%0A%0A" +
+        "Terima kasih 🙏";
+
+      document.getElementById("waShare").href =
+        "https://wa.me/?text=" + pesanWA;
+    }
+
+    function copyLink() {
+      if (!finalLink) {
+        alert("Buat link dulu");
+        return;
+      }
+
+      navigator.clipboard.writeText(finalLink);
+      alert("Link berhasil dicopy");
+    }
+  </script>
 
 </body>
 </html>
