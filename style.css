@@ -1,23 +1,16 @@
-body {body {
-  font-family: 'Poppins', sans-serif;
-}
-
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 50px;
-}
+body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #fdf7f2;
-color: #3e2c23;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0b08;
+  color: #f7ead8;
   text-align: center;
-      background: #c59d5f;
 }
 
 .hero {
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
   background-size: cover;
   background-position: center;
   color: white;
@@ -25,41 +18,89 @@ color: #3e2c23;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-button:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
+  animation: fadeIn 2s ease;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
   margin: 10px 0;
+  color: #f5d6a1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  letter-spacing: 2px;
 }
 
 button,
 .map-button,
 .wa-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #8b5e3c;
+  background: linear-gradient(135deg, #c59d5f, #8b5e3c);
   color: white;
   border: none;
+  padding: 14px 28px;
   border-radius: 30px;
   text-decoration: none;
-  margin-top: 15px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   cursor: pointer;
 }
 
+button:hover,
+.map-button:hover,
+.wa-button:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
 .content {
-  padding: 40px 20px;
+  padding: 60px 20px;
+  background: linear-gradient(#f7ead8, #fff8ee);
+  color: #3b2f2f;
+  animation: fadeUp 1.5s ease;
 }
 
 .content h2 {
-  margin-top: 40px;
   color: #8b5e3c;
+  font-size: 28px;
+  margin-top: 45px;
+}
+
+.content p {
+  max-width: 650px;
+  margin: 12px auto;
+  line-height: 1.8;
+}
+
+#countdown {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c59d5f;
 }
 
 .hidden {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
