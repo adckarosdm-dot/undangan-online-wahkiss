@@ -1,178 +1,254 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bagikan Undangan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bagikan Undangan</title>
 
-<style>
-body {
-  font-family: Arial;
-  background: #f7ead8;
-  padding: 20px;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7ead8;
+      color: #3a2a1c;
+      padding: 20px;
+    }
 
-.container {
-  max-width: 700px;
-  margin: auto;
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-}
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
 
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
+    h1 {
+      text-align: center;
+      color: #8a5a2b;
+    }
 
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 20px;
-  border: none;
-  background: #c59d5f;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 18px;
+    }
 
-.guest {
-  background: #fff8ee;
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 15px;
-}
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
 
-a {
-  display: block;
-  margin-top: 10px;
-  padding: 10px;
-  text-align: center;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-}
+    textarea {
+      min-height: 110px;
+    }
 
-.wa { background: #25D366; }
-.copy { background: #444; }
-</style>
+    button, .btn {
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    .gold { background: #c59d5f; }
+    .copy { background: #444; }
+    .wa { background: #25D366; }
+    .ig { background: #E1306C; }
+
+    .guest-card {
+      background: #fff8ee;
+      border: 1px solid #ead7b8;
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 18px;
+    }
+
+    .guest-card h3 {
+      margin: 0 0 10px;
+      color: #8a5a2b;
+    }
+
+    .link {
+      word-break: break-all;
+      font-size: 13px;
+      color: #6b4a2c;
+      margin: 10px 0;
+    }
+
+    .preview {
+      white-space: pre-wrap;
+      background: #fff;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px dashed #c59d5f;
+      font-size: 13px;
+      text-align: left;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="container">
-<h2>Generator Undangan</h2>
+  <h1>Bagikan Undangan</h1>
 
-<label>Jenis Acara</label>
-<select id="jenis">
-  <option value="pawiwahan">Pawiwahan</option>
-  <option value="metatah">Potong Gigi</option>
-  <option value="tigabulan">3 Bulanan</option>
-</select>
+  <label>Jenis Acara</label>
+  <select id="jenisAcara">
+    <option value="pawiwahan">Pawiwahan</option>
+    <option value="metatah">Potong Gigi / Metatah</option>
+    <option value="tigabulanan">3 Bulanan</option>
+  </select>
 
-<label>Tanggal</label>
-<input type="text" id="tanggal" placeholder="22 Juni 2026">
+  <label>Nama Acara / ID Undangan</label>
+  <input type="text" id="idUndangan" value="pawiwahan-kripa">
 
-<label>Waktu</label>
-<input type="text" id="waktu" placeholder="10.00 WITA">
+  <label>Link Undangan Utama</label>
+  <input type="text" id="linkUtama" value="https://undangan-online-wahkiss.vercel.app/">
 
-<label>Tempat</label>
-<input type="text" id="tempat" placeholder="Denpasar, Bali">
+  <label>Link Input Nama Tamu</label>
+  <input type="text" id="linkShare" value="https://undangan-online-wahkiss.vercel.app/share.html">
 
-<label>Nama Tamu (pisahkan baris)</label>
-<textarea id="nama"></textarea>
+  <label>Link Cara Mengirim Undangan</label>
+  <input type="text" id="linkTutorial" value="https://www.youtube.com/shorts/oNT81kX1zqM">
 
-<button onclick="generate()">Buat Undangan</button>
+  <label>Link Pantau Ucapan & Kehadiran Tamu</label>
+  <input type="text" id="linkRsvp" value="https://undangan-online-wahkiss.vercel.app/rsvp.html">
 
-<div id="hasil"></div>
+  <label>Tanggal</label>
+  <input type="text" id="tanggal" placeholder="Contoh: Sabtu, 22 Juni 2026">
+
+  <label>Waktu</label>
+  <input type="text" id="waktu" placeholder="Contoh: 10.00 WITA - selesai">
+
+  <label>Tempat</label>
+  <input type="text" id="tempat" placeholder="Contoh: Denpasar, Bali">
+
+  <label>Daftar Nama Tamu</label>
+  <textarea id="daftarNama" placeholder="Contoh:
+Tamu Undangan
+Bapak Made & Ibu
+Keluarga Besar Pak Wayan"></textarea>
+
+  <button class="gold" onclick="buatDaftar()">Buat Daftar Undangan</button>
+
+  <div id="hasil"></div>
 </div>
 
 <script>
+function namaJenisAcara(jenis) {
+  if (jenis === "pawiwahan") return "pawiwahan";
+  if (jenis === "metatah") return "potong gigi / metatah";
+  if (jenis === "tigabulanan") return "3 bulanan";
+  return "acara";
+}
 
-function generate() {
-  let jenis = document.getElementById("jenis").value;
-  let tanggal = document.getElementById("tanggal").value;
-  let waktu = document.getElementById("waktu").value;
-  let tempat = document.getElementById("tempat").value;
-  let namaList = document.getElementById("nama").value.split("\n");
+function buatDaftar() {
+  const jenis = document.getElementById("jenisAcara").value;
+  const namaAcara = namaJenisAcara(jenis);
 
-  let hasil = document.getElementById("hasil");
+  const idUndangan = document.getElementById("idUndangan").value.trim();
+  const linkUtama = document.getElementById("linkUtama").value.trim();
+  const linkShare = document.getElementById("linkShare").value.trim();
+  const linkTutorial = document.getElementById("linkTutorial").value.trim();
+  const linkRsvp = document.getElementById("linkRsvp").value.trim();
+
+  const tanggal = document.getElementById("tanggal").value.trim();
+  const waktu = document.getElementById("waktu").value.trim();
+  const tempat = document.getElementById("tempat").value.trim();
+
+  const daftarNama = document.getElementById("daftarNama").value.trim();
+  const hasil = document.getElementById("hasil");
+
+  if (!daftarNama) {
+    alert("Masukkan daftar nama tamu dulu");
+    return;
+  }
+
   hasil.innerHTML = "";
 
-  namaList.forEach(nama => {
-    nama = nama.trim();
-    if (!nama) return;
+  const namaArray = daftarNama
+    .split("\n")
+    .map(nama => nama.trim())
+    .filter(nama => nama !== "");
 
-    let link = window.location.origin + "/?to=" + encodeURIComponent(nama);
+  namaArray.forEach((nama, index) => {
+    const linkUndangan = linkUtama + "?to=" + encodeURIComponent(nama);
 
-    let pesan = "";
+    const pesan = `Halo kak,
 
-    if (jenis === "pawiwahan") {
-      pesan = `Om Swastyastu 🙏
+Ini hasil undangan ${namaAcara}nya nggih kak 🙏🏻😊
 
-Halo ${nama},
+*Link Undangan:*
 
-Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara Pawiwahan kami.
+* ${linkUndangan}
 
-Hari/Tanggal: ${tanggal}
+*Detail Acara:*
+
+Tanggal: ${tanggal}
 Waktu: ${waktu}
 Tempat: ${tempat}
 
-Berikut link undangan:
-${link}
+*Berikut merupakan link untuk menambahkan nama tamu:*
 
-Om Shanti, Shanti, Shanti Om 🙏`;
-    }
+Link Input Nama Tamu:
 
-    if (jenis === "metatah") {
-      pesan = `Om Swastyastu 🙏
+* ${linkShare}
 
-Halo ${nama},
+*Cara Input nama tamu:*
 
-Kami mengundang untuk hadir dalam acara Potong Gigi (Metatah).
+1. Klik Link Input Nama Tamu
+2. Masukkan nama tamu
+3. Klik Buat Link Undangan
+4. Klik Bagikan Via WA / Sosmed
 
-Hari/Tanggal: ${tanggal}
-Waktu: ${waktu}
-Tempat: ${tempat}
+Cara Mengirim Undangan
+Kakak bisa tonton menggunakan tautan dibawah ini ya kak.. 😄
+${linkTutorial}
 
-Link undangan:
-${link}
+Pantau Ucapan & Kehadiran tamu:
 
-Om Shanti, Shanti, Shanti Om 🙏`;
-    }
+* ${linkRsvp}
 
-    if (jenis === "tigabulan") {
-      pesan = `Om Swastyastu 🙏
+Jika ada kebingungan atau kendala jangan ragu untuk menghubungi kami kembali nggih.. 🙏`;
 
-Halo ${nama},
-
-Kami mengundang untuk hadir dalam acara 3 Bulanan.
-
-Hari/Tanggal: ${tanggal}
-Waktu: ${waktu}
-Tempat: ${tempat}
-
-Link undangan:
-${link}
-
-Om Shanti, Shanti, Shanti Om 🙏`;
-    }
-
-    let encoded = encodeURIComponent(pesan);
+    const encodedPesan = encodeURIComponent(pesan);
 
     hasil.innerHTML += `
-      <div class="guest">
-        <b>${nama}</b>
-        <p>${link}</p>
+      <div class="guest-card">
+        <h3>${index + 1}. ${nama}</h3>
 
-        <button class="copy" onclick="copyText(\`${pesan}\`)">Copy Text</button>
+        <div class="link">${linkUndangan}</div>
 
-        <a class="wa" href="https://wa.me/?text=${encoded}" target="_blank">
-          Kirim WhatsApp
+        <div class="preview">${pesan}</div>
+
+        <button class="copy" onclick="copyText(\`${linkUndangan}\`)">
+          Copy Link Undangan
+        </button>
+
+        <button class="copy" onclick="copyText(\`${pesan}\`)">
+          Copy Format Text
+        </button>
+
+        <a class="btn wa" href="https://wa.me/?text=${encodedPesan}" target="_blank">
+          Bagikan via WhatsApp
+        </a>
+
+        <a class="btn ig" href="https://www.instagram.com/" target="_blank">
+          Buka Instagram
         </a>
       </div>
     `;
@@ -181,9 +257,8 @@ Om Shanti, Shanti, Shanti Om 🙏`;
 
 function copyText(text) {
   navigator.clipboard.writeText(text);
-  alert("Tersalin");
+  alert("Berhasil dicopy");
 }
-
 </script>
 
 </body>
