@@ -1,20 +1,14 @@
-<button onclick="openInvitation()">Buka Undangan</button>
-
 function openInvitation() {
-  document.querySelector(".cover").style.display = "none";
-  document.querySelector("#invitation").classList.remove("hidden");
-
+  const cover = document.getElementById("cover");
+  const invitation = document.getElementById("invitation");
   const music = document.getElementById("music");
+
+  cover.style.display = "none";
+  invitation.classList.remove("hidden");
+
   if (music) {
     music.play();
   }
-
-function openInvitation() {
-  document.querySelector(".cover").style.display = "none";
-  document.querySelector("#invitation").classList.remove("hidden");
-
-  const music = document.getElementById("music");
-  music.play();
 }
 
 function toggleMusic() {
@@ -25,6 +19,7 @@ function toggleMusic() {
   } else {
     music.pause();
   }
+}
 
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("to");
