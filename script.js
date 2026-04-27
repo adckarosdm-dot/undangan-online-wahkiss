@@ -1,3 +1,14 @@
+<button onclick="openInvitation()">Buka Undangan</button>
+
+function openInvitation() {
+  document.querySelector(".cover").style.display = "none";
+  document.querySelector("#invitation").classList.remove("hidden");
+
+  const music = document.getElementById("music");
+  if (music) {
+    music.play();
+  }
+
 function openInvitation() {
   document.querySelector(".cover").style.display = "none";
   document.querySelector("#invitation").classList.remove("hidden");
