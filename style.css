@@ -381,70 +381,52 @@ video {
   border: 1px solid #b88945;
 }
 
-/* ================= GIFT GRID ================= */
-
-.gift-section {
-  background: #171717;
-  color: #f6f1eb;
-  padding: 50px 18px;
-  text-align: center;
-}
-
-.gift-section h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  margin-bottom: 18px;
-}
-
-.gift-section > p {
-  max-width: 420px;
-  font-size: 14px;
-  margin: 0 auto 25px;
-}
-
-/* WRAPPER GRID */
+/* GRID 2 KOLOM */
 .gift-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 kolom */
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
 }
 
-/* CARD */
+/* CARD DIPERKECIL */
 .rekening-card {
   background: #f8f6f0;
   color: #111;
   border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  padding: 14px 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 /* TEXT */
 .rekening-card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 6px;
 }
 
 .rekening-card p {
-  font-size: 12px;
-  margin: 3px 0;
+  font-size: 11px;
+  margin: 2px 0;
 }
 
+/* NOMOR */
 .rekening-card h4 {
-  font-size: 16px;
-  margin: 8px 0;
+  font-size: 14px;
+  margin: 6px 0;
+  word-break: break-all;
 }
 
 /* BUTTON */
 .rekening-card button {
   width: 100%;
-  padding: 8px;
-  font-size: 11px;
+  padding: 7px;
+  font-size: 10px;
   border-radius: 8px;
   background: #222;
   color: white;
   border: none;
+  margin-top: 8px;
 }
 
 /* DESKTOP */
