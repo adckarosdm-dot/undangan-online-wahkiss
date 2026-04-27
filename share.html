@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bagikan Undangan</title>
+  <title>Generator Text Undangan</title>
 
   <style>
     body {
@@ -15,7 +15,7 @@
     }
 
     .container {
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
       background: white;
       padding: 25px;
@@ -45,7 +45,7 @@
     }
 
     textarea {
-      min-height: 110px;
+      min-height: 120px;
     }
 
     button, .btn {
@@ -104,31 +104,25 @@
 <body>
 
 <div class="container">
-  <h1>Bagikan Undangan</h1>
+  <h1>Generator Text Undangan</h1>
 
-  <label>Jenis Acara</label>
-  <select id="jenisAcara">
-    <option value="pawiwahan">Pawiwahan</option>
-    <option value="metatah">Potong Gigi / Metatah</option>
-    <option value="tigabulanan">3 Bulanan</option>
+  <label>Pilihan Undangan</label>
+  <select id="template">
+    <option value="english">English Romantic</option>
+    <option value="formal">Formal</option>
+    <option value="hindu">Hindu</option>
+    <option value="hindu2">Hindu 2</option>
+    <option value="metatahFormal">Metatah Formal</option>
+    <option value="metatahHindu">Metatah Hindu</option>
   </select>
 
-  <label>Nama Acara / ID Undangan</label>
-  <input type="text" id="idUndangan" value="pawiwahan-kripa">
+  <label>Judul Undangan</label>
+  <input type="text" id="judul" placeholder="Contoh: Krisna & Ayu">
 
   <label>Link Undangan Utama</label>
   <input type="text" id="linkUtama" value="https://undangan-online-wahkiss.vercel.app/">
 
-  <label>Link Input Nama Tamu</label>
-  <input type="text" id="linkShare" value="https://undangan-online-wahkiss.vercel.app/share.html">
-
-  <label>Link Cara Mengirim Undangan</label>
-  <input type="text" id="linkTutorial" value="https://www.youtube.com/shorts/oNT81kX1zqM">
-
-  <label>Link Pantau Ucapan & Kehadiran Tamu</label>
-  <input type="text" id="linkRsvp" value="https://undangan-online-wahkiss.vercel.app/rsvp.html">
-
-  <label>Tanggal</label>
+  <label>Hari/Tanggal</label>
   <input type="text" id="tanggal" placeholder="Contoh: Sabtu, 22 Juni 2026">
 
   <label>Waktu</label>
@@ -138,10 +132,10 @@
   <input type="text" id="tempat" placeholder="Contoh: Denpasar, Bali">
 
   <label>Daftar Nama Tamu</label>
-  <textarea id="daftarNama" placeholder="Contoh:
-Tamu Undangan
+  <textarea id="daftarNama" placeholder="Satu nama satu baris, contoh:
 Bapak Made & Ibu
-Keluarga Besar Pak Wayan"></textarea>
+Keluarga Pak Wayan
+Komang Ari"></textarea>
 
   <button class="gold" onclick="buatDaftar()">Buat Daftar Undangan</button>
 
@@ -149,27 +143,115 @@ Keluarga Besar Pak Wayan"></textarea>
 </div>
 
 <script>
-function namaJenisAcara(jenis) {
-  if (jenis === "pawiwahan") return "pawiwahan";
-  if (jenis === "metatah") return "potong gigi / metatah";
-  if (jenis === "tigabulanan") return "3 bulanan";
-  return "acara";
+function buatPesan(template, nama, link, judul, tanggal, waktu, tempat) {
+  if (template === "english") {
+    return `Without diminishing our respect, we would like to extend our sincere invitation to ${nama} to attend our wedding ceremony.
+
+Please find our complete wedding details through the link below:
+${link}
+
+It would be an honor for us if you could grace our special day with your presence and blessings.
+
+Thank you.
+
+Respectfully,
+${judul}`;
+  }
+
+  if (template === "formal") {
+    return `Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, *${nama}* untuk menghadiri acara pernikahan kami.
+
+*Berikut link undangan kami*, untuk info lengkap dari acara, bisa kunjungi:
+
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+Terima Kasih
+
+Hormat kami,
+${judul}`;
+  }
+
+  if (template === "hindu") {
+    return `Kepada Yth.
+*${nama}*
+
+Om Swastiastu
+
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami :
+
+Berikut link undangan kami untuk info lengkap dari acara bisa kunjungi :
+
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+Om Shanti, Shanti, Shanti, Om.`;
+  }
+
+  if (template === "hindu2") {
+    return `Kepada Yth.
+*${nama}*
+
+Om Swastiastu,
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, dalam acara Upacara Manusa Yadnya Pawiwahan (Pernikahan) kami yang dilaksanakan pada:
+
+Hari/Tgl: ${tanggal}
+Waktu: ${waktu}
+Tempat: ${tempat}
+
+Kami sangat mengharapkan kehadiran Bapak/Ibu/Saudara/i untuk memberikan doa restu dalam acara kami.
+
+Berikut link undangan kami untuk info lengkap dari acara bisa kunjungi :
+
+${link}
+
+Merupakan suatu kehormatan & kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+Om Shanti, Shanti, Shanti, Om.`;
+  }
+
+  if (template === "metatahFormal") {
+    return `Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, *${nama}* untuk menghadiri acara potong gigi kami.
+
+*Berikut link undangan kami*, untuk info lengkap dari acara, bisa kunjungi:
+
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+Terima Kasih
+
+Hormat kami,
+${judul}`;
+  }
+
+  if (template === "metatahHindu") {
+    return `Kepada Yth.
+*${nama}*
+
+Om Swastiastu
+
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara metatah (potong gigi) kami :
+
+Berikut link undangan kami untuk info lengkap dari acara bisa kunjungi :
+
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+Om Shanti, Shanti, Shanti, Om.`;
+  }
 }
 
 function buatDaftar() {
-  const jenis = document.getElementById("jenisAcara").value;
-  const namaAcara = namaJenisAcara(jenis);
-
-  const idUndangan = document.getElementById("idUndangan").value.trim();
+  const template = document.getElementById("template").value;
+  const judul = document.getElementById("judul").value.trim() || "Undangan Kami";
   const linkUtama = document.getElementById("linkUtama").value.trim();
-  const linkShare = document.getElementById("linkShare").value.trim();
-  const linkTutorial = document.getElementById("linkTutorial").value.trim();
-  const linkRsvp = document.getElementById("linkRsvp").value.trim();
-
   const tanggal = document.getElementById("tanggal").value.trim();
   const waktu = document.getElementById("waktu").value.trim();
   const tempat = document.getElementById("tempat").value.trim();
-
   const daftarNama = document.getElementById("daftarNama").value.trim();
   const hasil = document.getElementById("hasil");
 
@@ -186,56 +268,19 @@ function buatDaftar() {
     .filter(nama => nama !== "");
 
   namaArray.forEach((nama, index) => {
-    const linkUndangan = linkUtama + "?to=" + encodeURIComponent(nama);
-
-    const pesan = `Halo kak,
-
-Ini hasil undangan ${namaAcara}nya nggih kak 🙏🏻😊
-
-*Link Undangan:*
-
-* ${linkUndangan}
-
-*Detail Acara:*
-
-Tanggal: ${tanggal}
-Waktu: ${waktu}
-Tempat: ${tempat}
-
-*Berikut merupakan link untuk menambahkan nama tamu:*
-
-Link Input Nama Tamu:
-
-* ${linkShare}
-
-*Cara Input nama tamu:*
-
-1. Klik Link Input Nama Tamu
-2. Masukkan nama tamu
-3. Klik Buat Link Undangan
-4. Klik Bagikan Via WA / Sosmed
-
-Cara Mengirim Undangan
-Kakak bisa tonton menggunakan tautan dibawah ini ya kak.. 😄
-${linkTutorial}
-
-Pantau Ucapan & Kehadiran tamu:
-
-* ${linkRsvp}
-
-Jika ada kebingungan atau kendala jangan ragu untuk menghubungi kami kembali nggih.. 🙏`;
-
+    const link = linkUtama + "?to=" + encodeURIComponent(nama);
+    const pesan = buatPesan(template, nama, link, judul, tanggal, waktu, tempat);
     const encodedPesan = encodeURIComponent(pesan);
 
     hasil.innerHTML += `
       <div class="guest-card">
         <h3>${index + 1}. ${nama}</h3>
 
-        <div class="link">${linkUndangan}</div>
+        <div class="link">${link}</div>
 
         <div class="preview">${pesan}</div>
 
-        <button class="copy" onclick="copyText(\`${linkUndangan}\`)">
+        <button class="copy" onclick="copyText(\`${link}\`)">
           Copy Link Undangan
         </button>
 
