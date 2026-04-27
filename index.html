@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pawiwahan</title>
 
-  <title>Undangan Pawiwahan Krisna & Ayu</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<section id="cover" class="cover bali-cover">
-  <div class="ornament-top">ᬒᬁ</div>
 
-  <div class="cover-content">
-    <p class="top-title">Undangan Pawiwahan</p>
+<body>
 
+<audio id="music" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<section id="cover" class="cover">
+  <div class="cover-inner">
+    <p class="small-title">Undangan Pawiwahan</p>
     <h1>Krisna & Ayu</h1>
-
-    <div class="divider">✦ ✦ ✦</div>
-
     <p class="date">Sabtu, 22 Juni 2026</p>
 
     <div class="guest-box">
@@ -28,121 +28,101 @@
 
     <button onclick="openInvitation()">Buka Undangan</button>
   </div>
-
-  <div class="ornament-bottom">Om Shanti Shanti Shanti Om</div>
 </section>
-<body>
 
-  <audio id="music" loop>
-    <source src="musik.mp3" type="audio/mpeg">
-  </audio>
+<main id="invitation" class="hidden">
 
-  <section id="cover" class="cover">
-    <div class="cover-content">
-      <p class="top-title">Undangan Pawiwahan</p>
-      <h1>Krisna & Ayu</h1>
-      <p class="date">22 Juni 2026</p>
+  <section class="cream-section">
+    <div class="ornament">✦</div>
+    <h2>Om Swastyastu</h2>
+    <p>
+      Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa,
+      kami bermaksud mengundang Bapak/Ibu/Saudara/i
+      untuk hadir dalam acara Pawiwahan kami.
+    </p>
+  </section>
 
-      <div class="guest-box">
-        <p>Kepada Yth.</p>
-        <h3 id="guestName">Tamu Undangan</h3>
-      </div>
+  <section class="couple-section">
+    <div class="person">
+      <img src="pria.jpg" alt="Pengantin pria">
+      <h3>I Komang Krisna</h3>
+      <p>Putra dari<br>Bapak ... & Ibu ...</p>
+    </div>
 
-      <button onclick="openInvitation()">Buka Undangan</button>
+    <div class="and">&</div>
+
+    <div class="person">
+      <img src="wanita.jpg" alt="Pengantin wanita">
+      <h3>Ni Kadek Ayu</h3>
+      <p>Putri dari<br>Bapak ... & Ibu ...</p>
     </div>
   </section>
 
-  <main id="invitation" class="hidden">
+  <section class="dark-section">
+    <h2>Detail Acara</h2>
 
-    <section class="countdown-section">
-      <p>Menuju Hari Bahagia</p>
-      <div id="countdown" class="countdown"></div>
-    </section>
+    <div class="detail-box">
+      <h4>Hari / Tanggal</h4>
+      <p>Sabtu, 22 Juni 2026</p>
+    </div>
 
-    <section class="card">
-      <h2>Om Swastyastu</h2>
-      <p>
-        Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa,
-        kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara
-        Pawiwahan kami.
-      </p>
-    </section>
+    <div class="detail-box">
+      <h4>Waktu</h4>
+      <p>10.00 WITA - Selesai</p>
+    </div>
 
-    <section class="couple">
-      <div class="person">
-        <img src="pria.jpg" alt="Pengantin pria">
-        <h2>Krisna</h2>
-        <p>Putra dari Bapak ... & Ibu ...</p>
-      </div>
+    <div class="detail-box">
+      <h4>Tempat</h4>
+      <p>Puri Agung Ubud<br>Jl. Raya Ubud No.8, Gianyar, Bali</p>
+    </div>
 
-      <div class="ampersand">&</div>
+    <a class="btn" href="https://maps.google.com" target="_blank">
+      Lihat di Google Maps
+    </a>
+  </section>
 
-      <div class="person">
-        <img src="wanita.jpg" alt="Pengantin wanita">
-        <h2>Ayu</h2>
-        <p>Putri dari Bapak ... & Ibu ...</p>
-      </div>
-    </section>
+  <section class="countdown-section">
+    <h2>Menuju Hari Bahagia</h2>
+    <div id="countdown" class="countdown"></div>
+  </section>
 
-    <section class="card dark">
-      <h2>Waktu & Tempat</h2>
-      <p><strong>Sabtu, 22 Juni 2026</strong></p>
-      <p>10.00 WITA - selesai</p>
-      <p>Gedung Dharma Negara Alaya, Denpasar</p>
+  <section class="dark-section">
+    <h2>Galeri</h2>
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+    </div>
+  </section>
 
-      <a class="btn" href="https://maps.google.com" target="_blank">
-        Lihat Google Maps
-      </a>
-    </section>
+  <section class="dark-section">
+    <h2>Video Prewedding</h2>
+    <video controls poster="foto1.jpg">
+      <source src="prewed.mp4" type="video/mp4">
+    </video>
+  </section>
 
-    <section class="card doa">
-      <h2>Doa & Restu</h2>
-      <p>Om Swastyastu</p>
-      <p>
-        Ya Tuhan Yang Maha Esa, Ida Sang Hyang Widhi Wasa,
-        semoga pernikahan ini diberkahi dengan kerahayuan,
-        keharmonisan, cinta kasih, dan kebahagiaan.
-      </p>
-      <p><em>Om Shanti, Shanti, Shanti Om</em></p>
-    </section>
+  <section class="cream-section">
+    <h2>Konfirmasi Kehadiran</h2>
+    <p>
+      Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i
+      berkenan hadir dan memberikan doa restu.
+    </p>
 
-    <section class="card">
-      <h2>Foto & Video Prewedding</h2>
+    <a class="btn" href="https://wa.me/6281234567890" target="_blank">
+      Konfirmasi via WhatsApp
+    </a>
+  </section>
 
-      <div class="gallery">
-        <img src="foto1.jpg" alt="Foto prewedding 1">
-        <img src="foto2.jpg" alt="Foto prewedding 2">
-        <img src="foto3.jpg" alt="Foto prewedding 3">
-      </div>
+  <section class="closing">
+    <p>Om Shanti Shanti Shanti Om</p>
+  </section>
 
-      <video controls poster="foto1.jpg">
-        <source src="prewed.mp4" type="video/mp4">
-        Browser Anda tidak mendukung video.
-      </video>
-    </section>
+</main>
 
-    <section class="card">
-      <h2>RSVP</h2>
-      <p>Mohon konfirmasi kehadiran melalui WhatsApp.</p>
+<button id="musicBtn" onclick="toggleMusic()">🎵</button>
 
-      <a class="btn" href="https://wa.me/6281234567890" target="_blank">
-        Konfirmasi via WhatsApp
-      </a>
-    </section>
-
-    <section class="closing">
-      <h2>Terima Kasih</h2>
-      <p>
-        Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i
-        berkenan hadir dan memberikan doa restu.
-      </p>
-      <h3>Om Shanti, Shanti, Shanti Om</h3>
-    </section>
-
-  </main>
-
-  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
