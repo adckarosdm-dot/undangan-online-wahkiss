@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Undangan</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    input {
+      width: 90%;
+      max-width: 400px;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border-radius: 20px;
+      border: none;
+      background: gold;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 25px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Generator Link Undangan</h2>
+
+<p>Masukkan nama tamu:</p>
+
+<input type="text" id="nama" placeholder="Contoh: Bapak Made & Ibu">
+
+<br>
+
+<button onclick="buatLink()">Buat Link</button>
+
+<div id="result"></div>
+
+<script>
+function buatLink() {
+  let nama = document.getElementById("nama").value;
+
+  if (!nama) {
+    alert("Isi nama dulu");
+    return;
+  }
+
+  let encoded = encodeURIComponent(nama);
+
+  let link = window.location.origin + "/?to=" + encoded;
+
+  document.getElementById("result").innerHTML = `
+    <p>Link Undangan:</p>
+    <a href="${link}" target="_blank">${link}</a>
+  `;
+}
+</script>
+
+</body>
+</html>
