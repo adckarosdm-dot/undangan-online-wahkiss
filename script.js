@@ -1,11 +1,8 @@
 function openInvitation() {
-  const cover = document.getElementById("cover");
-  const invitation = document.getElementById("invitation");
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("invitation").classList.remove("hidden");
+
   const music = document.getElementById("music");
-
-  cover.style.display = "none";
-  invitation.classList.remove("hidden");
-
   if (music) {
     music.play();
   }
@@ -46,4 +43,3 @@ setInterval(function () {
     <div class="time-box"><strong>${seconds}</strong>Detik</div>
   `;
 }, 1000);
-
