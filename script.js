@@ -6,6 +6,15 @@ function openInvitation() {
   music.play();
 }
 
+function toggleMusic() {
+  const music = document.getElementById("music");
+
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("to");
 
