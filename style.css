@@ -370,3 +370,33 @@ section {
     width: 100%;
   }
 }
+
+.doa {
+  background: linear-gradient(#fff8ee, #f7ead8);
+}
+
+<p style="font-size:14px; letter-spacing:2px; color:#c59d5f;">
+  🙏 Ida Sang Hyang Widhi Wasa 🙏
+</p>
+
+.doa h2 {
+  font-family: 'Cinzel', serif;
+  color: #8a5a2b;
+  margin-bottom: 20px;
+}
+
+.doa-text {
+  max-width: 650px;
+  margin: 10px auto;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.doa-text:first-child {
+  font-weight: bold;
+}
+
+.doa-text:last-child {
+  margin-top: 20px;
+  font-style: italic;
+}
