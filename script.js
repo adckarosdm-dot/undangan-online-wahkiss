@@ -46,3 +46,12 @@ setInterval(function () {
     <div class="time-box"><strong>${seconds}</strong>Detik</div>
   `;
 }, 1000);
+
+document.getElementById("result").innerHTML = `
+  <p>Link Undangan:</p>
+  <a href="${link}" target="_blank">${link}</a>
+  <br><br>
+  <a href="https://wa.me/?text=${link}" target="_blank">
+    <button>Kirim via WhatsApp</button>
+  </a>
+`;
