@@ -167,6 +167,11 @@ section {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
+.person img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
 .person h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 46px;
