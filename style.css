@@ -324,3 +324,49 @@ section {
   }
 
 }
+
+.prewed h2 {
+  font-family: 'Cinzel', serif;
+  color: #8a5a2b;
+}
+
+.prewed-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.prewed-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.video-box {
+  margin-top: 25px;
+}
+
+.video-box video {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+  .prewed-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .prewed-gallery img {
+    height: 260px;
+  }
+
+  .video-box video {
+    width: 100%;
+  }
+}
