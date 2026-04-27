@@ -1,4 +1,11 @@
-body {
+body {body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+}
   margin: 0;
   font-family: Georgia, serif;
   background: #f8f1e7;
@@ -8,14 +15,20 @@ body {
 
 .hero {
   min-height: 100vh;
-  background: linear-gradient(#00000066, #00000066), url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("https://images.unsplash.com/photo-1519225421980-715cb0215aed");
   background-size: cover;
   background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .hero h1 {
