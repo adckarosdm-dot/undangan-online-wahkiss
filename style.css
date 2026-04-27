@@ -4,10 +4,9 @@
 
 body {
   margin: 0;
-  background: #090604;
+  background: #111;
+  color: #111;
   font-family: 'Poppins', sans-serif;
-  color: #2d2118;
-  text-align: center;
   overflow-x: hidden;
 }
 
@@ -15,7 +14,15 @@ body {
   display: none;
 }
 
-/* COVER HP */
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+button, .btn {
+  cursor: pointer;
+}
+
+/* COVER */
 .cover {
   min-height: 100vh;
   background:
@@ -23,63 +30,63 @@ body {
     url("cover-bali.jpg");
   background-size: cover;
   background-position: center;
-  padding: 24px;
+  color: #fff8ef;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 24px;
 }
 
-.cover-inner {
+.cover-content {
   width: 100%;
-  max-width: 360px;
-  padding: 28px 18px;
+  max-width: 390px;
+  padding: 32px 22px;
   border: 1px solid rgba(212,175,104,0.65);
-  border-radius: 28px;
-  background: rgba(0,0,0,0.35);
+  border-radius: 30px;
+  background: rgba(0,0,0,0.38);
   backdrop-filter: blur(5px);
 }
 
 .small-title {
   font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
   color: #d4af68;
+  letter-spacing: 4px;
+  text-transform: uppercase;
   font-size: 13px;
 }
 
 .cover h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 58px;
+  font-size: 62px;
   color: #ffe1a3;
-  margin: 14px 0;
-  text-shadow: 0 0 25px rgba(212,175,104,0.7);
+  margin: 16px 0;
+  text-shadow: 0 0 26px rgba(212,175,104,0.8);
 }
 
 .date {
   font-family: 'Cinzel', serif;
-  color: white;
-  font-size: 13px;
   letter-spacing: 2px;
+  font-size: 13px;
 }
 
 .guest-box {
-  margin: 24px auto;
-  padding: 16px;
+  border: 1px solid rgba(212,175,104,0.55);
   border-radius: 18px;
-  border: 1px solid rgba(212,175,104,0.5);
-  color: white;
+  padding: 16px;
+  margin: 26px auto;
 }
 
 .guest-box h3 {
   color: #f6d48a;
 }
 
-button,
+.cover button,
 .btn {
   display: inline-block;
+  border: none;
   background: linear-gradient(135deg, #e0b96c, #8a5a2b);
   color: #111;
-  border: none;
   padding: 13px 26px;
   border-radius: 30px;
   font-weight: 700;
@@ -87,235 +94,50 @@ button,
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-/* SECTION */
-section {
-  padding: 42px 16px;
-}
-
-.cream-section {
-  background:
-    linear-gradient(rgba(255,246,232,0.96), rgba(255,246,232,0.96)),
-    url("paper-texture.jpg");
-  border-top: 2px solid #c59d5f;
-  border-bottom: 2px solid #c59d5f;
-}
-
-.cream-section h2,
-.dark-section h2,
-.countdown-section h2 {
-  font-family: 'Cinzel', serif;
-  color: #8a5a2b;
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-.cream-section p {
-  max-width: 340px;
-  margin: auto;
-  line-height: 1.8;
-  font-size: 14px;
+/* INTRO */
+.intro {
+  background: #f8f6f0;
+  text-align: center;
+  padding: 55px 24px;
 }
 
 .ornament {
-  color: #c59d5f;
+  color: #b88945;
   font-size: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-/* COUPLE */
-.couple-section {
-  background: #f6ead7;
-}
-
-.person {
-  background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(197,157,95,0.5);
-  border-radius: 26px;
-  padding: 24px 16px;
-  margin: 0 auto 22px;
-  max-width: 320px;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.15);
-}
-
-.person img {
-  width: 155px;
-  height: 155px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #d4af68;
-}
-
-.person h3 {
+.intro h2,
+.rsvp h2,
+.countdown-section h2,
+.gallery-section h2,
+.video-section h2 {
   font-family: 'Cinzel', serif;
   color: #8a5a2b;
-  font-size: 19px;
+  margin-bottom: 18px;
 }
 
-.person p {
-  line-height: 1.7;
-}
-
-.and {
-  font-family: 'Great Vibes', cursive;
-  font-size: 56px;
-  color: #b88945;
-  margin-bottom: 20px;
-}
-
-/* DARK */
-.dark-section {
-  background:
-    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
-    url("bg-dark-bali.jpg");
-  background-size: cover;
-  background-position: center;
-  color: #f7ead8;
-  border-top: 1px solid #c59d5f;
-  border-bottom: 1px solid #c59d5f;
-}
-
-.dark-section h2 {
-  color: #d4af68;
-}
-
-.detail-box {
-  border-bottom: 1px solid rgba(212,175,104,0.35);
-  padding: 14px 0;
-}
-
-.detail-box h4 {
-  color: #d4af68;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-/* COUNTDOWN */
-.countdown-section {
-  background: #f6ead7;
-}
-
-.countdown {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 330px;
+.intro p,
+.rsvp p {
+  max-width: 620px;
   margin: auto;
+  line-height: 1.8;
 }
 
-.time-box {
-  background: #100c08;
-  color: #d4af68;
-  padding: 16px 8px;
-  border-radius: 14px;
-  border: 1px solid #c59d5f;
-}
-
-.time-box strong {
-  display: block;
-  font-size: 28px;
-}
-
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  max-width: 360px;
-  margin: auto;
-}
-
-.gallery img {
-  width: 100%;
-  height: 145px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #c59d5f;
-}
-
-video {
-  width: 100%;
-  max-width: 360px;
-  border-radius: 16px;
-  border: 1px solid #c59d5f;
-}
-
-/* CLOSING */
-.closing {
-  background: #090604;
-  color: #d4af68;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-}
-
-/* MUSIC */
-#musicBtn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  padding: 0;
-  z-index: 999;
-}
-
-/* TABLET / DESKTOP */
-@media (min-width: 769px) {
-  .cover h1 {
-    font-size: 86px;
-  }
-
-  .cover-inner {
-    max-width: 520px;
-  }
-
-  .couple-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-  }
-
-  .and {
-    margin-bottom: 0;
-  }
-
-  .countdown {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 600px;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 800px;
-  }
-
-  .gallery img {
-    height: 180px;
-  }
-
-  video {
-    max-width: 760px;
-  }
-}
-/* ================= MEMPELAI ARTISTIK ================= */
-
-.mempelai-artistik {
+/* MEMPELAI */
+.mempelai {
   background: #f8f6f0;
-  color: #111;
-  padding: 70px 24px;
-  text-align: left;
+  padding: 40px 0 20px;
 }
 
 .mempelai-block {
-  max-width: 720px;
-  margin: 0 auto 90px;
+  padding: 35px 24px 80px;
 }
 
 .photo-stack {
   position: relative;
-  width: 100%;
   max-width: 420px;
+  margin: auto;
 }
 
 .main-photo {
@@ -340,34 +162,34 @@ video {
 .circle-text {
   position: absolute;
   top: -35px;
-  right: 20px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  font-size: 13px;
+  right: 15px;
+  font-size: 12px;
   letter-spacing: 4px;
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transform: rotate(-25deg);
 }
 
 .mempelai-text {
   margin-top: 85px;
+  text-align: left;
+  max-width: 620px;
+}
+
+.label {
+  color: #b88945;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
 }
 
 .mempelai-text h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: #111;
-  margin-bottom: 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 16px 0 24px;
 }
 
 .mempelai-text p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.8;
 }
 
@@ -388,169 +210,279 @@ video {
   right: auto;
 }
 
-/* ================= LOVE STORY ================= */
-
-.love-story {
-  background: #171717;
-  color: #f6f1eb;
-  padding: 75px 28px;
-  text-align: left;
+.reverse .mempelai-text {
+  margin-left: auto;
+  text-align: right;
 }
 
-.story-content {
-  max-width: 620px;
+/* DETAIL ACARA */
+.detail-acara {
+  background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+    url("bg-dark-bali.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #f8f6f0;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.detail-acara h2 {
+  font-family: 'Cinzel', serif;
+  color: #d4af68;
+  margin-bottom: 28px;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 24px;
+  max-width: 760px;
   margin: auto;
 }
 
+.detail-grid h4 {
+  color: #d4af68;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.detail-grid p {
+  line-height: 1.7;
+}
+
+.detail-acara .btn {
+  margin-top: 26px;
+}
+
+/* LOVE STORY */
+.love-story {
+  background: #171717;
+  color: #f6f1eb;
+  padding: 70px 28px;
+}
+
 .love-story h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 36px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
   font-weight: 400;
-  margin-bottom: 35px;
-  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.love-story p {
-  font-family: Georgia, serif;
-  font-size: 21px;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  text-align: justify;
+.timeline {
+  max-width: 620px;
+  margin: auto;
+  border-left: 1px solid #b88945;
+  padding-left: 28px;
 }
 
-/* ================= KADO DIGITAL ================= */
+.story-item {
+  position: relative;
+  margin-bottom: 36px;
+}
 
+.story-item::before {
+  content: "♥";
+  position: absolute;
+  left: -45px;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  background: #171717;
+  border: 1px solid #b88945;
+  border-radius: 50%;
+  color: #d4af68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-item span {
+  color: #d4af68;
+  font-size: 24px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.story-item h3 {
+  color: #d4af68;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  margin: 4px 0 10px;
+}
+
+.story-item p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* COUNTDOWN */
+.countdown-section {
+  background: #f8f6f0;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 430px;
+  margin: auto;
+}
+
+.time-box {
+  border-right: 1px solid #b88945;
+  padding: 8px;
+}
+
+.time-box:last-child {
+  border-right: none;
+}
+
+.time-box strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 500;
+}
+
+/* GALLERY */
+.gallery-section,
+.video-section {
+  background: #171717;
+  color: #f8f6f0;
+  padding: 55px 18px;
+  text-align: center;
+}
+
+.gallery-section h2,
+.video-section h2 {
+  color: #d4af68;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border: 1px solid #b88945;
+}
+
+video {
+  width: 100%;
+  max-width: 760px;
+  border: 1px solid #b88945;
+}
+
+/* GIFT */
 .gift-section {
   background: #171717;
   color: #f6f1eb;
   padding: 70px 24px;
-  text-align: left;
 }
 
 .gift-section h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 42px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
   font-weight: 400;
   margin-bottom: 25px;
-  color: #fff;
 }
 
 .gift-section > p {
   max-width: 620px;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.7;
   margin-bottom: 45px;
 }
 
 .rekening-card {
-  position: relative;
   background: #f8f6f0;
   color: #111;
   border-radius: 18px;
-  padding: 35px 28px;
+  padding: 32px 24px;
   margin: 0 auto 28px;
   max-width: 620px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
 }
 
 .rekening-card h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 32px;
-  margin: 0 0 22px;
-}
-
-.rekening-card p {
-  font-size: 18px;
-  margin: 8px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  margin-bottom: 18px;
 }
 
 .rekening-card h4 {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: 400;
-  margin: 18px 0;
-  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 500;
+  margin: 16px 0;
 }
 
 .rekening-card button {
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
-  padding: 0;
+  width: 100%;
+  border: none;
   background: #222;
   color: white;
-  font-size: 12px;
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 18px;
 }
 
-/* ================= RESPONSIVE HP ================= */
+/* RSVP */
+.rsvp {
+  background: #f8f6f0;
+  padding: 55px 24px;
+  text-align: center;
+}
 
-@media (max-width: 768px) {
-  .mempelai-artistik {
-    padding: 65px 24px;
+/* CLOSING */
+.closing {
+  background: #171717;
+  color: #d4af68;
+  padding: 42px 24px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+}
+
+/* MUSIC */
+#musicBtn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #d4af68;
+  z-index: 999;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .cover h1 {
+    font-size: 90px;
   }
 
-  .main-photo {
-    width: 82%;
-    height: 330px;
+  .cover-content {
+    max-width: 540px;
   }
 
-  .small-photo {
-    width: 52%;
-    height: 170px;
-    bottom: -45px;
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .mempelai-text h2 {
-    font-size: 28px;
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .mempelai-text p {
-    font-size: 16px;
-  }
-
-  .love-story {
-    padding: 70px 28px;
-  }
-
-  .love-story h2 {
-    font-size: 32px;
-  }
-
-  .love-story p {
-    font-size: 20px;
-    line-height: 1.7;
-  }
-
-  .gift-section h2 {
-    font-size: 38px;
-  }
-
-  .gift-section > p {
-    font-size: 18px;
-  }
-
-  .rekening-card {
-    padding: 32px 24px;
-  }
-
-  .rekening-card h3 {
-    font-size: 30px;
-  }
-
-  .rekening-card h4 {
-    font-size: 28px;
-  }
-
-  .rekening-card button {
-    position: static;
-    transform: none;
-    margin-top: 18px;
-    width: 100%;
-    height: 48px;
-    border-radius: 14px;
+  .gallery img {
+    height: 210px;
   }
 }
