@@ -3,131 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generator Link Undangan</title>
+  <title>Bagikan Undangan</title>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
+      background: #f7ead8;
+      color: #3a2a1c;
+      padding: 20px;
     }
 
-    .box {
-      max-width: 450px;
+    .container {
+      max-width: 700px;
       margin: auto;
-      background: #1d1d1d;
+      background: white;
       padding: 25px;
       border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
+    h1 {
+      text-align: center;
+      color: #8a5a2b;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+    }
+
+    textarea,
     input {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
       border-radius: 10px;
-      border: none;
-      margin: 15px 0;
       box-sizing: border-box;
     }
 
-    button, a {
-      display: block;
+    textarea {
+      min-height: 120px;
+    }
+
+    button,
+    .btn {
       width: 100%;
+      padding: 13px;
       margin-top: 12px;
-      padding: 14px;
-      border-radius: 30px;
       border: none;
-      text-decoration: none;
-      color: white;
+      border-radius: 30px;
       font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      text-align: center;
       box-sizing: border-box;
     }
 
-    .generate {
-      background: #c59d5f;
+    .gold { background: #c59d5f; color: white; }
+    .copy { background: #444; color: white; }
+    .wa { background: #25D366; color: white; }
+    .ig { background: #E1306C; color: white; }
+
+    .guest-card {
+      background: #fff8ee;
+      border: 1px solid #ead7b8;
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 15px;
     }
 
-    .copy {
-      background: #444;
+    .guest-card h3 {
+      margin: 0 0 10px;
+      color: #8a5a2b;
     }
 
-    .wa {
-      background: #25D366;
-    }
-
-    .ig {
-      background: #E1306C;
-    }
-
-    #linkText {
-      margin-top: 20px;
+    .link {
       word-break: break-all;
-      font-size: 14px;
-      color: #f5d58a;
+      font-size: 13px;
+      color: #6b4a2c;
+      margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
-    <h2>Daftar Link Undangan</h2>
-    <p>Masukkan nama tamu:</p>
+<div class="container">
+  <h1>Bagikan Undangan</h1>
 
-    <input type="text" id="nama" placeholder="Contoh: Bapak Made & Ibu">
+  <label>Masukkan daftar nama tamu</label>
+  <textarea id="daftarNama" placeholder="Contoh:
+Bapak Made & Ibu
+Komang Ari
+Keluarga Besar Pak Wayan"></textarea>
 
-    <button class="generate" onclick="buatLink()">Buat Link Undangan</button>
+  <label>Format pesan undangan</label>
+  <textarea id="formatPesan">Halo kak,
 
-    <p id="linkText"></p>
+Ini undangan pawiwahan kami nggih 🙏😊
 
-    <button class="copy" onclick="copyLink()">Copy Link</button>
+Kepada Yth:
+{nama}
 
-    <a id="waShare" class="wa" href="#" target="_blank">
-      Share ke WhatsApp
-    </a>
+Berikut link undangannya:
+{link}
 
-    <a id="igShare" class="ig" href="https://www.instagram.com/" target="_blank">
-      Buka Instagram
-    </a>
-  </div>
+Merupakan suatu kehormatan bagi kami apabila berkenan hadir dan memberikan doa restu.
 
-  <script>
-    let finalLink = "";
+Om Shanti, Shanti, Shanti Om 🙏</textarea>
 
-    function buatLink() {
-      const nama = document.getElementById("nama").value.trim();
+  <button class="gold" onclick="buatDaftar()">Buat Daftar Nama Tamu</button>
 
-      if (!nama) {
-        alert("Isi nama tamu dulu");
-        return;
-      }
+  <div id="hasil"></div>
+</div>
 
-      const encodedNama = encodeURIComponent(nama);
-      finalLink = window.location.origin + "/?to=" + encodedNama;
+<script>
+  function buatDaftar() {
+    const daftarNama = document.getElementById("daftarNama").value.trim();
+    const formatPesan = document.getElementById("formatPesan").value;
 
-      document.getElementById("linkText").innerText = finalLink;
-
-      const pesanWA =
-        "Halo kak,%0A%0A" +
-        "Berikut link undangan kami:%0A" +
-        finalLink + "%0A%0A" +
-        "Terima kasih 🙏";
-
-      document.getElementById("waShare").href =
-        "https://wa.me/?text=" + pesanWA;
+    if (!daftarNama) {
+      alert("Masukkan nama tamu dulu");
+      return;
     }
 
-    function copyLink() {
-      if (!finalLink) {
-        alert("Buat link dulu");
-        return;
-      }
+    const namaArray = daftarNama.split("\n").filter(nama => nama.trim() !== "");
+    const hasil = document.getElementById("hasil");
+    hasil.innerHTML = "";
 
-      navigator.clipboard.writeText(finalLink);
-      alert("Link berhasil dicopy");
-    }
-  </script>
+    namaArray.forEach((nama, index) => {
+      const namaBersih = nama.trim();
+      const link = window.location.origin + "/?to=" + encodeURIComponent(namaBersih);
+
+      const pesan = formatPesan
+        .replaceAll("{nama}", namaBersih)
+        .replaceAll("{link}", link);
+
+      const encodedPesan = encodeURIComponent(pesan);
+
+      hasil.innerHTML += `
+        <div class="guest-card">
+          <h3>${index + 1}. ${namaBersih}</h3>
+
+          <div class="link">${link}</div>
+
+          <button class="copy" onclick="copyText('${link}')">
+            Copy Link
+          </button>
+
+          <button class="copy" onclick="copyText(\`${pesan}\`)">
+            Copy Format Text
+          </button>
+
+          <a class="btn wa" href="https://wa.me/?text=${encodedPesan}" target="_blank">
+            Bagikan via WhatsApp
+          </a>
+
+          <a class="btn ig" href="https://www.instagram.com/" target="_blank">
+            Buka Instagram
+          </a>
+        </div>
+      `;
+    });
+  }
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text);
+    alert("Berhasil dicopy");
+  }
+</script>
 
 </body>
 </html>
