@@ -11,6 +11,8 @@ function openInvitation() {
 function toggleMusic() {
   const music = document.getElementById("music");
 
+  if (!music) return;
+
   if (music.paused) {
     music.play();
   } else {
@@ -28,6 +30,9 @@ if (guest) {
 const countDownDate = new Date("June 22, 2026 10:00:00").getTime();
 
 setInterval(function () {
+  const countdown = document.getElementById("countdown");
+  if (!countdown) return;
+
   const now = new Date().getTime();
   const distance = countDownDate - now;
 
@@ -36,10 +41,16 @@ setInterval(function () {
   const minutes = Math.floor((distance / (1000 * 60)) % 60);
   const seconds = Math.floor((distance / 1000) % 60);
 
-  document.getElementById("countdown").innerHTML = `
+  countdown.innerHTML = `
     <div class="time-box"><strong>${days}</strong>Hari</div>
     <div class="time-box"><strong>${hours}</strong>Jam</div>
     <div class="time-box"><strong>${minutes}</strong>Menit</div>
     <div class="time-box"><strong>${seconds}</strong>Detik</div>
   `;
 }, 1000);
+
+function copyRekening(id) {
+  const nomor = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(nomor);
+  alert("Nomor rekening berhasil disalin");
+}
